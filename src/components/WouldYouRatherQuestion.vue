@@ -1,6 +1,8 @@
+<!--LAB: A WouldYouRatherQuestion component displays a question, and two radio buttons, one for each answer.-->
+
 <template>
   <div class="wyr">
-    <h2>Please make your choice</h2>
+    <h2>Would you rather...</h2>
 
     <h3>{{question}}</h3>
 
@@ -25,7 +27,7 @@
 
 <script>
 export default {
-  name: 'WouldYouRather',
+  name: 'WouldYouRatherQuestion',
   props: {
     question: String,
     answer1: String,
@@ -37,7 +39,7 @@ export default {
     }
   },
   methods: {
-    //this "emits" an answer change event back to App.vue, telling it that the user selected an answer
+    //LAB: When the user selects a choice for each question, the WouldYouRatherQuestion component should emit a message to its parent. 
     choiceMade() {
       this.$emit('answer-changed', this.choice)
     }
@@ -47,11 +49,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 h3 {
   margin: 40px 0 0;
 }
 
 .wyr {
   border: 2px black solid;
+  font-family:'Courier New', Courier, monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  background-color: aquamarine;
 }
+
+
 </style>
